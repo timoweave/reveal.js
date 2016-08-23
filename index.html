@@ -29,10 +29,10 @@
                         <h2>lines <span style="font-size:0.7em;">&</span> shuffles</h2>
                         
                         <h3>Aug 2016</h3>
-                        <p>random <span style="color:#555;background-color:deeppink;opacity: 0.5;">m<span style="color:white;background-color:#b93282;opacity: 0.5;">art</span>h</span></p>
+                        <p>random <span style="color:#555;color:#b02477;opacity: 0.65;">m<span style="color:white;color:deeppink;">art</span>h</span></p>
                         <p>numbers, lines, boxes, <span style="color:#777272;">to</span> a tower</p>
                         <div id="canvas_icon"></div>
-                        <p>5, [10, 11, 16, 18, 13, 17, 15, 14, 12, 19]</p>
+                        <p id="canvas_icon_sequence" style="font-size:0.75em;"></p>
                         <h4 id="author_name">Tim Shiu</h4>
                         
                         
@@ -46,9 +46,9 @@
                         <ol>
                             <li>A boundary with four sides: top, right, bottom, left</li>
                             <li>Each side is divided into N segments</li>
-                            <li>Each segments' begining is a point</li>
-                            <li>Each line connects two points from two different sides</li>
-                            <li>N + N lines in total</li>
+                            <li>Each point is formed when two segments connected</li>
+                            <li>Each line connects two points from different sides</li>
+                            <li>4N points, 2N lines in total</li>
                         </ol>
                         
                     </section>
@@ -56,19 +56,19 @@
                         <section>
                             <h2>5+5 Lines (base case)</h2>
                             <div id="canvas_base"></div>
-                            <p>5, [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]</p>
+                            <p id="canvas_base_sequence" style="font-size:0.75em;"></p>
                         </section>
                         
                         <section>
                             <h2>5+5 Lines (1 shuffle)</h2>
                             <div id="canvas_one"></div>
-                            <p>5, [11, 10, 12, 13, 14, 15, 16, 17, 18, 19]</p>
+                            <p id="canvas_one_sequence" style="font-size:0.75em;"></p>
                         </section>
                         
                         <section>
                             <h2>5+5 Lines (M shuffle)</h2>
                             <div id="canvas_few"></div>
-                            <p>5, [10, 11, 16, 18, 13, 17, 15, 14, 12, 19]</p>
+                            <p id="canvas_few_sequence" style="font-size:0.75em;"></p>
                         </section>
                     </section>
                     <section>
@@ -88,7 +88,7 @@
                             </li>
                             <li>define lines, list of index pairs
                                 <ol>
-                                    <li>N : [2*N, 2*N+1, ..., 4*N - 1] (description!)</li>
+                                    <li>N : [0, 2*N, 1, 2*N+1, ..., 2*N-1, 4*N - 1] (description!)</li>
                                 </ol>
                             </li>
                             <li>shuffle lines, repeat M times
@@ -139,7 +139,7 @@
                     </section>
                     <section>
                         <div id="canvas_thanks"></div>
-                        <p>8 : [16,23,17,18,20,25,31,22,24,26,21,27,28,19,30,29]</p>
+                        <p id="canvas_thanks_sequence" style="font-size:0.4em;"></p>
                         <h2>Thanks</h2>
                     </section>
                     
@@ -159,7 +159,9 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			                { src: 'plugin/highlight/highlight.js',
+                                          async: true,
+                                          callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
