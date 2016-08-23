@@ -185,17 +185,17 @@ $(function() {
                           [[0,7],[1,19],[17,13],[3,16],[4,11],
                            [5,15],[6,14],[10,18],[8,2],[9,12]]);
   $('#canvas_icon_sequence').html(b1.sequence());
-  var b2 = new RaphaelBox("canvas_base", (window.innerHeight*0.7), 5, 0);
+  var b2 = new RaphaelBox("canvas_base", (window.innerHeight*0.5), 5, 0);
   $('#canvas_base_sequence').text(b2.sequence());
-  var b3 = new RaphaelBox("canvas_one", (window.innerHeight*0.7), 5,
+  var b3 = new RaphaelBox("canvas_one", (window.innerHeight*0.5), 5,
                           [[0,6],[1,11],[2,12],[3,13],[4,14],
                            [5,15],[10,16],[7,17],[8,18],[9,19]]);
   $('#canvas_one_sequence').text(b3.sequence());
-  var b4 = new RaphaelBox("canvas_few", (window.innerHeight*0.7), 5,
+  var b4 = new RaphaelBox("canvas_few", (window.innerHeight*0.5), 5,
                           [[0,12],[1,13],[17,10],[3,11],[4,6],
                            [5,19],[14,2],[7,16],[8,18],[9,15]]);
   $('#canvas_few_sequence').text(b4.sequence());
-  var b5 = new RaphaelBox("canvas_thanks", (window.innerHeight*0.4), 20, 40);
+  var b5 = new RaphaelBox("canvas_thanks", (window.innerHeight*0.6), 20, 40);
   $('#canvas_thanks_sequence').text(b5.sequence());
 });
 

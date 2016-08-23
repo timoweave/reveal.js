@@ -88,7 +88,7 @@ var corner = function(paper, color, p, t, i, s0, s1) {
   var y1 = p[j1*2+1];
   var line = paper.path("M " + x0 + "," + y0 + " L " + x1 + "," + y1);
 
-  line.attr({"stroke-width": (Math.random() * t+0.1), "stroke" : "white"});
+  line.attr({"stroke-width": (Math.random() * t*0.5+0.1), "stroke" : "white"});
   return line;
 }
 
@@ -129,7 +129,7 @@ var cross = function(paper, color, p, t, s0, s1, s2, s3) {
   var y1 = p[j_1*2+1];
   var line = paper.path("M " + x0 + "," + y0 + " L " + x1 + "," + y1);
 
-  line.attr({"stroke-width": (Math.random() * t+0.1), "stroke" : "white"});
+  line.attr({"stroke-width": (Math.random() * t *0.5+0.1), "stroke" : "white"});
   return line;
 }
 
@@ -220,7 +220,7 @@ var box = function(paper, w, h, t, o, p, r) {
 var changes = function(paper, t) {
   return;
   paper.forEach(function(elem) {
-    var width = Math.floor(Math.random()*t);
+    var width = Math.floor(Math.random()*t*0.5);
     var time = Math.floor(Math.random()*t);
     elem.animation({
       "stroke-width": width,
